@@ -1,15 +1,25 @@
+import React from 'react';
+import Navbar from './components/navbar';
+import Landing from './components/landing';
+import WatchPartyScreen from './components/watchpartyscreen';
 
-import React from 'react'
-import Navbar from './components/navbar'
-import Landing from './components/landing'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const App = () => {
   return (
-    <div className="min-h-screen w-full bg-[#242629] flex flex-col">
-      <Navbar />
-      <Landing />
-    </div>
-  )
-}
+    <BrowserRouter>
+      <div className="min-h-screen w-full bg-[#242629] flex flex-col">
 
-export default App
+        <Navbar />
+
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/watch-party" element={<WatchPartyScreen />} />
+        </Routes>
+
+      </div>
+    </BrowserRouter>
+  );
+};
+
+export default App;

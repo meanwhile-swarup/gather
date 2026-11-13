@@ -1,7 +1,16 @@
 
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
+    const navigate = useNavigate();
+    const homePage = () => {
+        navigate('/');
+    };
+
+    const watchPartyPage = () => {
+        navigate('/watch-party');
+    }
   return (
     <nav className="w-full h-[76px] shrink-0 bg-[#292D35]
       border-b border-white/10 text-[#F1F4FA]
@@ -34,7 +43,9 @@ const Navbar = () => {
       <div className="hidden md:flex items-center gap-2">
 
      
-        <button className="relative px-5 py-2.5
+        <button 
+        onClick = {homePage}
+        className="relative px-5 py-2.5
           text-sm font-semibold text-white
           rounded-xl bg-[#397BFF]/15
           border border-[#397BFF]/30
@@ -44,7 +55,7 @@ const Navbar = () => {
           <span className="flex items-center gap-2">
 
             <span className="w-1.5 h-1.5 rounded-full
-              bg-[#5590FF] shadow-[0_0_8px_#397BFF]" />
+              bg-[#5590FF] shadow-[0_0_8px_#397BFF]"/>
 
             Homepage
 
@@ -52,7 +63,9 @@ const Navbar = () => {
         </button>
 
     
-        <button className="px-5 py-2.5 rounded-xl
+        <button 
+        onClick = {watchPartyPage}
+        className="px-5 py-2.5 rounded-xl
           text-sm font-medium text-[#AAB3C2]
           hover:text-white hover:bg-white/[0.06]
           transition-all duration-200">
