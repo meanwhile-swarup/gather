@@ -1,0 +1,1 @@
+A watchparty platform to get rid of screen sharing and it's issues via private/public rooms with video synchronization across devices with a communication media feature. 
